@@ -1,0 +1,34 @@
+# Kyle8973 
+# https://github.com/Kyle8973/Personal-Music-Server/
+version: "3"
+services:
+  navidrome:
+    image: deluan/navidrome:latest         # Pulls the latest stable Navidrome image
+    user: 1000:1000                        # Runs the container as your Pi's local user for permission safety
+    ports:
+      - "4533:4533"                        # Maps the server port (Host:Container)
+    restart: unless-stopped                # Automatically starts the server if the Pi reboots
+    environment:
+      # Metadata Integration (Last.fm and Spotify API keys required)
+      ND_SPOTIFY_ID: "your_id"             # Your Spotify Developer Client ID
+      ND_SPOTIFY_SECRET: "your_secret"     # Your Spotify Developer Client Secret
+      ND_LASTFM_ENABLED: "true"            # Enables fetching artist bios/photos from Last.fm
+      ND_LASTFM_APIKEY: "your_key"         # Your Last.fm API Key
+      ND_LASTFM_SECRET: "your_secret"      # Your Last.fm API Secret
+      
+      # UI & Performance
+      ND_LOGLEVEL: "info"                  # Sets logging level (info/debug/error)
+      ND_COVERARTPRIORITY: "embedded, cover.*, folder.*, front.*, external" # Priority list for finding album art
+      ND_IMAGECACHESIZE: "100MB"           # Reserves 100MB of RAM to make scrolling album art faster
+    volumes:
+      - "./data:/data"                     # Maps the local 'data' folder for the database/cache
+      - "./music:/music:ro"                # Maps your 'music' folder as Read-Only for safety
+
+  filebrowser:
+    image: filebrowser/filebrowser:latest  # Pulls the FileBrowser image
+    user: 1000:1000                        # Runs as local user to match file permissions
+    ports:
+      - "8080:80"                          # Access your files via browser at Pi-IP:8080
+    volumes:
+      - "./music:/srv"                     # Allows you to upload music directly to the music folder
+      - "./filebrowser.db:/database.db"    # Saves your FileBrowser settings and users
