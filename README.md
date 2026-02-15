@@ -243,8 +243,8 @@ Smart caching acts as an intelligent "conveyor belt" that stays ahead of your li
 
 - **Further Support:** Should you require further support, please open an [Issue](https://github.com/Kyle8973/Personal-Music-Server/issues) on Github and I will do my best to support you.
 ---
-## ⚠️Licence
-This project is published under the MIT [Licence](https://github.com/Kyle8973/Personal-Music-Server/blob/main/LICENSE):
+## ⚠️License
+This project is published under the MIT [License](https://github.com/Kyle8973/Personal-Music-Server/blob/main/LICENSE):
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
