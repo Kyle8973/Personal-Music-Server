@@ -225,14 +225,23 @@ Smart caching acts as an intelligent "conveyor belt" that stays ahead of your li
 **Steps to set it up:**
 
 1. Go to **Settings > Offline, Cache and Download**.
+
 2. Go to **General** and set a rolling cache size of your choice, I recommend around 5GB
+
 3. Enable **Automatic Offline Mode** - This ensures when you are offline, the app only shows music that can be streamed offline.
+
 4. Disable **Only Consider Primary Connection For Wi-Fi Status** - This ensures the app works with ZeroTier and treats it as a network connection.
+
 5. Go back to **Settings > Offline, Cache and Download**.
+
 6. Select **Playback**
+
 7. Set the **Playback Cache Size** I recommend around 1GB
+
 8. Set the **Pre-cache tracks** to 3 tracks for both Mobile and Wi-Fi, you can do more however, for best performance I recommend 3.
+
 9. Enable **Add Playback Cached Media To Offline Rolling Cache** - This ensures playback cache is promoted to the offline cache for offline listening.
+
 10. Done! 
 ---
 ## 🎨 Troubleshooting & Metadata
